@@ -4,7 +4,10 @@
 //See, edit, create, and delete all of your Google Drive files	https://www.googleapis.com/auth/drive
 //View and manage your Google Docs documents	https://www.googleapis.com/auth/documents
 
+//Based on the followng tutorial which can better explain this use case, https://jeffreyeverhart.com/2018/09/17/auto-fill-google-doc-from-google-form-submission/
+
 function autoFillGoogleDocFromForm(e) {
+  //e.values is an array of form values
   var timestamp = e.values[0];
   var date = e.values[1];
   var name = e.values[2];
@@ -31,14 +34,19 @@ function autoFillGoogleDocFromForm(e) {
   var veh3Towing = e.values[23];
   var veh3Rental = e.values[24];
   
-  var templateFile = DriveApp.getFileById("1X-NNKLzy13RLa4ynBkWB50uZYSV63W_zwUxMrQD9GXM"); //This is the blank form to be filled by the script
-  var templateResponseFolder = DriveApp.getFolderById("1vjxp9eFhXiyOk6awpdjWyp1OcA8Va5Y_"); //This is the destination folder for the filled forms
+  var templateFile = DriveApp.getFileById("1X-NNKLzy13RLa4ynBkWB50uZYSV63W_zwUxMrQD9GXM");
+  //the blank form to be filled by the script
+  var templateResponseFolder = DriveApp.getFolderById("1vjxp9eFhXiyOk6awpdjWyp1OcA8Va5Y_");
+  //the destination folder for the filled forms
   
   var copy = templateFile.makeCopy(name, templateResponseFolder);
+  //creates a copy of the blank form templateFile and gives it a name
   
   var doc = DocumentApp.openById(copy.getId());
+  //opens the document
   
   var body = doc.getBody();
+  //gets the body of the document
   
   body.replaceText("{{Today's Date}}", date);
   body.replaceText("{{Insured's Name}}", name);
@@ -64,8 +72,9 @@ function autoFillGoogleDocFromForm(e) {
   body.replaceText("{{Veh 3 Comp/Collision}}", veh3PD);
   body.replaceText("{{Veh 3 Towing}}", veh3Towing);
   body.replaceText("{{Veh 3 Rental}}", veh3Rental);
+  //calls to all of our replaceText methods
   
   doc.saveAndClose();
-  
+  //saves and closes the newly created document
   
 }
