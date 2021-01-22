@@ -18,7 +18,7 @@ function autoFillGoogleDocFromForm(e) {
   var veh1Towing = e.values[7];
   var veh1Rental = e.values[8];
   var medPay = e.values[9];
-  var ADD = e.values[10];
+  var ADD = e.values[10]; // ADD is not a good variable name, should change, column name in associated sheet should not matter(?)
   var underInsured = e.values[11];
   var bodilyInjury = e.values[12];
   var propertyDamage = e.values[13];
@@ -57,7 +57,7 @@ function autoFillGoogleDocFromForm(e) {
   body.replaceText("{{Veh 1 Towing}}", veh1Towing);
   body.replaceText("{{Veh 1 Rental}}", veh1Rental);
   body.replaceText("{{Medical Payments}}", medPay);
-  body.replaceText("{{AD&D}}", ADD);
+  body.replaceText("{{AD&D}}", ADD); // ADD is not a good variable name, should change, column name in associated sheet should not matter(?)
   body.replaceText("{{Combined Un & Underinsured}}", underInsured);
   body.replaceText("{{Bodily Injury}}", bodilyInjury);
   body.replaceText("{{Property Damage}}", propertyDamage);
@@ -78,3 +78,7 @@ function autoFillGoogleDocFromForm(e) {
   //saves and closes the newly created document
   
 }
+//Todo:
+//- Change getFileById to new updated document with tags added
+//- Logic to delete tag if not needed (ie: {{Veh 2 Year}} in a situation with only 1 vehicle)
+//- Create variants for other lines of business and document types (Business Auto, Homeowners, General Liability, Workers Comp, Prom Note, Designation of Authorized Rep, Ride-sharing, etc)
