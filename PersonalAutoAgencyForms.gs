@@ -17,12 +17,7 @@ function autoFillGoogleDocFromForm(e) {
   var veh1PD = e.values[6];
   var veh1Towing = e.values[7];
   var veh1Rental = e.values[8];
-  var medPay = e.values[9];
-  var ADD = e.values[10]; // ADD is not a good variable name, should change, column name in associated sheet should not matter(?)
-  var underInsured = e.values[11];
-  var bodilyInjury = e.values[12];
-  var propertyDamage = e.values[13];
-  var underInsuredPD = e.values[14];
+
   var veh2Year = e.values[15];
   var veh2Make = e.values[16];
   var veh2PD = e.values[17];
@@ -33,6 +28,19 @@ function autoFillGoogleDocFromForm(e) {
   var veh3PD = e.values[22];
   var veh3Towing = e.values[23];
   var veh3Rental = e.values[24];
+  
+  var veh4Year = e.values[20];
+  var veh4Make = e.values[21];
+  var veh4PD = e.values[22];
+  var veh4Towing = e.values[23];
+  var veh4Rental = e.values[24];
+  
+  var medPay = e.values[9];
+  var aDnd = e.values[10];
+  var underInsured = e.values[11];
+  var bodilyInjury = e.values[12];
+  var propertyDamage = e.values[13];
+  var underInsuredPD = e.values[14];
   
   var templateFile = DriveApp.getFileById("1X-NNKLzy13RLa4ynBkWB50uZYSV63W_zwUxMrQD9GXM");
   //the blank form to be filled by the script
@@ -57,7 +65,7 @@ function autoFillGoogleDocFromForm(e) {
   body.replaceText("{{Veh 1 Towing}}", veh1Towing);
   body.replaceText("{{Veh 1 Rental}}", veh1Rental);
   body.replaceText("{{Medical Payments}}", medPay);
-  body.replaceText("{{AD&D}}", ADD); // ADD is not a good variable name, should change, column name in associated sheet should not matter(?)
+  body.replaceText("{{AD&D}}", aDnd);
   body.replaceText("{{Combined Un & Underinsured}}", underInsured);
   body.replaceText("{{Bodily Injury}}", bodilyInjury);
   body.replaceText("{{Property Damage}}", propertyDamage);
@@ -79,6 +87,9 @@ function autoFillGoogleDocFromForm(e) {
   
 }
 //Todo:
+//- Fix all e.values
 //- Change getFileById to new updated document with tags added
+//- Change getFolderById to new updated folder location
+//- Logic to create merged document from two(or more) seperate template documents
 //- Logic to delete tag if not needed (ie: {{Veh 2 Year}} in a situation with only 1 vehicle)
 //- Create variants for other lines of business and document types (Business Auto, Homeowners, General Liability, Workers Comp, Prom Note, Designation of Authorized Rep, Ride-sharing, etc)
