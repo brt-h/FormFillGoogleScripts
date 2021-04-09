@@ -43,9 +43,9 @@ function autoFillGoogleDocFromForm(e) {
   var underInsured = e.values[29];
   var underInsuredPD = e.values[30];
   
-  var templateFile = DriveApp.getFileById("1X-NNKLzy13RLa4ynBkWB50uZYSV63W_zwUxMrQD9GXM");
+  var templateFile = DriveApp.getFileById("137B0rhUsCPcQRmSseM43eBUIawkarG2M7Klx42mrl2Y");
   //the blank form to be filled by the script
-  var templateResponseFolder = DriveApp.getFolderById("1vjxp9eFhXiyOk6awpdjWyp1OcA8Va5Y_");
+  var templateResponseFolder = DriveApp.getFolderById("1NmqXBcKqdu_63cD02tVbEhRTNceTR1Dg");
   //the destination folder for the filled forms
   
   var copy = templateFile.makeCopy(name, templateResponseFolder);
@@ -94,8 +94,7 @@ function autoFillGoogleDocFromForm(e) {
   
 }
 //Todo:
-//- Change getFileById to new updated document with tags added
-//- Change getFolderById to new updated folder location
+//- Change getFileById to new updated document with tags added (for other template options)
 //- Logic to create merged document from two(or more) seperate template documents
 //- Logic to delete tag if not needed (ie: {{Veh 2 Year}} in a situation with only 1 vehicle)
 //- Create variants for other lines of business and document types (Business Auto, Homeowners, General Liability, Workers Comp, Prom Note, Designation of Authorized Rep, Ride-sharing, etc)
