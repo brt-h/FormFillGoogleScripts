@@ -96,5 +96,4 @@ function autoFillGoogleDocFromForm(e) {
 //Todo:
 //- Change getFileById to new updated document with tags added (for other template options)
 //- Logic to create merged document from two(or more) seperate template documents
-//- Logic to delete tag if not needed (ie: {{Veh 2 Year}} in a situation with only 1 vehicle)
 //- Create variants for other lines of business and document types (Business Auto, Homeowners, General Liability, Workers Comp, Prom Note, Designation of Authorized Rep, Ride-sharing, etc)
