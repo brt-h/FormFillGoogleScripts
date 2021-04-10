@@ -43,7 +43,6 @@ function autoFillGoogleDocFromForm(e) {
   var underInsured = e.values[29];
   var underInsuredPD = e.values[30];
   
-  //var templateFile = DriveApp.getFileById("1X3m5SlYUxhL78PE520W1qG7aUuLUEN0kecuR9OcCxPc"); //merged file that is not formatted properly, new plan: spit out two seperate documents
   var templateFile = DriveApp.getFileById("137B0rhUsCPcQRmSseM43eBUIawkarG2M7Klx42mrl2Y"); //coverage rejection form
   //the blank form to be filled by the script
   var templateResponseFolder = DriveApp.getFolderById("1NmqXBcKqdu_63cD02tVbEhRTNceTR1Dg");
@@ -93,7 +92,7 @@ function autoFillGoogleDocFromForm(e) {
   doc.saveAndClose();
   //saves and closes the newly created document
   
-  var templateFile2 = DriveApp.getFileById("1X3m5SlYUxhL78PE520W1qG7aUuLUEN0kecuR9OcCxPc"); //policy fee form
+  var templateFile2 = DriveApp.getFileById("1mmLvQah5uxSjKBP_zfyCqXwftISGpEKtrJ6Q-6ppGwI"); //policy fee form
   //the blank form to be filled by the script
   var templateResponseFolder = DriveApp.getFolderById("1NmqXBcKqdu_63cD02tVbEhRTNceTR1Dg");
   //the destination folder for the filled forms
