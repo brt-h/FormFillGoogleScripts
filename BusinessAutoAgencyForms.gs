@@ -144,3 +144,4 @@ function autoFillGoogleDocFromForm(e) {
 //Todo:
 //- Change getFileById to new updated document with tags added (for other template options)
 //- Create variants for other lines of business and document types (Business Auto, Homeowners, General Liability, Workers Comp, Prom Note, Designation of Authorized Rep, Ride-sharing, etc)
+//- Place X's for blank fields in form for additional coverages
