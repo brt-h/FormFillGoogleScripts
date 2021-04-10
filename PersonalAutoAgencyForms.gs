@@ -49,7 +49,7 @@ function autoFillGoogleDocFromForm(e) {
   var templateResponseFolder = DriveApp.getFolderById("1NmqXBcKqdu_63cD02tVbEhRTNceTR1Dg");
   //the destination folder for the filled forms
   
-  var copy = templateFile.makeCopy(name + 'coverage rejection form', templateResponseFolder);
+  var copy = templateFile.makeCopy(name + ' coverage rejection form', templateResponseFolder);
   //creates a copy of the blank form templateFile and gives it a name
   
   var doc = DocumentApp.openById(copy.getId());
@@ -98,7 +98,7 @@ function autoFillGoogleDocFromForm(e) {
   var templateResponseFolder = DriveApp.getFolderById("1NmqXBcKqdu_63cD02tVbEhRTNceTR1Dg");
   //the destination folder for the filled forms
   
-  var copy2 = templateFile2.makeCopy(name + 'policy fee form', templateResponseFolder);
+  var copy2 = templateFile2.makeCopy(name + ' policy fee form', templateResponseFolder);
   //creates a copy of the blank form templateFile and gives it a name
   
   var doc2 = DocumentApp.openById(copy2.getId());
